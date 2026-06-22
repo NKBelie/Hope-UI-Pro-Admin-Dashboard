@@ -40,14 +40,14 @@ const navGroups = [
 export function Sidebar({ isCollapsed }) {
   return (
     <aside
-      className={`shrink-0 overflow-hidden border-r border-slate-100 bg-white transition-[width] duration-300 ${
-        isCollapsed ? 'w-[4.5rem]' : 'w-56'
+      className={`shrink-0 overflow-y-auto overflow-x-hidden border-r border-slate-100 bg-white transition-[width] duration-300 ${
+        isCollapsed ? 'w-4.5rem' : 'w-56'
       }`}
       aria-label={isCollapsed ? 'Collapsed sidebar navigation' : 'Sidebar navigation'}
     >
-      <div className={`flex h-full flex-col ${isCollapsed ? 'w-[4.5rem]' : 'w-56'}`}>
+      <div className={`flex min-h-full flex-col ${isCollapsed ? 'w-4.5rem' : 'w-56'}`}>
         <div
-          className={`flex h-14 items-center border-b border-slate-100 px-4 ${
+          className={`sticky top-0 z-10 flex h-14 shrink-0 items-center border-b border-slate-100 bg-white px-4 ${
             isCollapsed ? 'justify-center' : 'gap-3'
           }`}
         >
@@ -72,7 +72,7 @@ export function Sidebar({ isCollapsed }) {
               isCollapsed ? 'size-11' : 'mb-3 size-20'
             }`}
           >
-            <div className="flex size-full items-end justify-center overflow-hidden rounded-md bg-gradient-to-br from-slate-200 via-indigo-100 to-blue-100">
+            <div className="flex size-full items-end justify-center overflow-hidden rounded-md bg-linear-to-br from-slate-200 via-indigo-100 to-blue-100">
               <FiUser
                 className={`${isCollapsed ? 'mb-1 text-2xl' : 'mb-2 text-5xl'} text-[#4355e8]`}
                 aria-hidden="true"
@@ -93,7 +93,7 @@ export function Sidebar({ isCollapsed }) {
           )}
         </div>
 
-        <nav className="min-h-0 flex-1 overflow-y-auto py-3">
+        <nav className="flex-1 py-3">
           {navGroups.map((group) => (
             <div className="border-b border-slate-100 py-3 last:border-b-0" key={group.label}>
               {isCollapsed ? (
