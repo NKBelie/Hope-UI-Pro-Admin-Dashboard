@@ -166,3 +166,5 @@ When presenting, a good flow is:
 - Add and restore actions update local React state only.
 - Authentication and real sign-out behavior are not implemented.
 - Remote Unsplash images are used for mock gallery and media cards.
+
+**Prepare by: NDAYISABA KAMARIZA Belie**
